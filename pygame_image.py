@@ -6,11 +6,13 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ProjExD2023/ex01/fig/pg_bg.jpg")
+    "bg_imgs = pg.transform.flip(bg_img, True, False)"
     kk_img = pg.transform.flip(pg.image.load("ProjExD2023/ex01/fig/3.png"), True, False)
     kk_imgs = [kk_img, pg.transform.rotozoom(kk_img, 10, 1.0)]
 
     tmr = 0
     x = 0
+    y = 0
 
     while True:
         for event in pg.event.get():
@@ -18,13 +20,15 @@ def main():
 
         tmr += 1
         x = tmr%1600
+        y = tmr%50
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img, [1600-x, 0])
-        screen.blit(kk_imgs[tmr%2], [300, 200])
+        screen.blit(kk_imgs[y<25], [300, 200])
         
 
+        
         pg.display.update()
-        clock.tick(100)
+        clock.tick(300)
         
 
 
