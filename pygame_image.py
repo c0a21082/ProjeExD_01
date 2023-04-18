@@ -7,7 +7,7 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kk_img = pg.transform.flip(pg.image.load("ex01/fig/3.png"), True, False)
-    kk_imgs = [kk_img,pg.transform.rotate(kk_img, 10, 1.0)]
+    "kk_imgs = [kk_img,pg.transform.rotate(kk_img, 10, 1.0)]"
 
     tmr = 0
 
